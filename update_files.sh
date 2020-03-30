@@ -4,8 +4,8 @@
 # Note: update_files.txt should be a list of filenames with a line break after each filename/pattern
 file="$(cat update_files.txt)"
 
-original="index=test"
-replacement="index=_internal"
+original="index=foo"
+replacement="index=bar"
 
 echo "=========== Script Started ==========="
 echo "Beginning string replacement for the following file patterns:"
