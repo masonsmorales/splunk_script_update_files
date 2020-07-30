@@ -26,9 +26,9 @@ do
                 echo "No files with pattern \"$f\" were found to contain the string \"$original\""
         else
                 echo "$matches"
-			          echo "===================================================="
-		            read -n1 -r -p "Press Y to continue (case-sensitive)..." key
-			          echo ""
+		echo "===================================================="
+		read -n1 -r -p "Press Y to continue (case-sensitive)..." key
+		echo ""
                 if [ "$key" = 'Y' ]; then
 
                   # Perform replacement operation
