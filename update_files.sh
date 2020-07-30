@@ -23,16 +23,24 @@ do
 
         if [ -z "$matches" ]
         then
-                echo "No files with pattern \"file\" were found to contain the string \"$original\""
+                echo "No files with pattern \"$f\" were found to contain the string \"$original\""
         else
                 echo "$matches"
-                # Perform replacement operation
-                for x in $matches
-                do
-                        sed -i -e "s/$original/$replacement/g" $x
-                done
-                echo "-----------"
-                echo "Note: You may have to edit and re-execute this script if you are replacing key/value pairs, and the value may contain quotes."
+			          echo "===================================================="
+		            read -n1 -r -p "Press Y to continue (case-sensitive)..." key
+			          echo ""
+                if [ "$key" = 'Y' ]; then
+
+                  # Perform replacement operation
+                  for x in $matches
+                  do
+                          sed -i -e "s/$original/$replacement/g" $x
+                  done
+                  echo "-----------"
+                  echo "Note: You may have to edit and re-execute this script if you are replacing key/value pairs, and the value may contain quotes."
+                else
+                  exit
+                fi
         fi
 
 done
